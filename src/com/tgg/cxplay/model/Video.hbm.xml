@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping  package="com.tgg.cxplay.model">
+    <class name="Video" table="video">
+        <id name="id" type="java.lang.Integer">
+            <generator class="identity" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" length="64" />
+        </property>
+        <property name="enName" type="java.lang.String">
+            <column name="en_name" length="64" />
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="create_time" />
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time" />
+        </property>
+        <property name="url" type="java.lang.String">
+            <column name="url" length="64" />
+        </property>
+        <property name="pic" type="java.lang.String">
+            <column name="pic" length="64" />
+        </property>
+        <property name="clarity" type="java.lang.String">
+            <column name="clarity" length="64" />
+        </property>
+        <property name="synopsis" type="java.lang.String">
+            <column name="synopsis" length="512" />
+        </property>
+        <property name="episode" type="java.lang.Integer">
+            <column name="episode" />
+        </property>
+        <property name="isDeleted" type="java.lang.Boolean">
+            <column name="is_deleted" />
+        </property>
+        <property name="actors" type="java.lang.String">
+            <column name="actors" length="64" />
+        </property>
+        <property name="directors" type="java.lang.String">
+            <column name="directors" length="64" />
+        </property>
+    </class>
+</hibernate-mapping>

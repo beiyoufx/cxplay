@@ -1,0 +1,185 @@
+/* first container */
+.weekly-hot-container {
+    margin: 15px auto;
+    background-color: white;
+    border:1px solid #D1D1D1;
+    overflow: hidden;
+}
+/* update list */
+.update {
+    float: left;
+    overflow: hidden;
+}
+.update header {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.update header .title {
+    float: left;
+    color: #009BD5;
+    font-size: 14px;
+    font-weight: bold;
+}
+.update header .menu {
+    float: right;
+    color:#484848;
+}
+.update header .menu a, a:visited{
+    color:#04B7F2;
+}
+.update .list ul {
+    overflow: hidden;
+}
+.update .list li {
+    height: 28px;
+    line-height:28px;
+    float:left;
+    padding-left: 10px;
+}
+.update .list b {
+    display: block;
+    width:20px;
+    font-weight:lighter;
+    float: left;
+}
+.update .list b.hight-light {
+    color:#ff8000;
+}
+.update .list a {
+    display: block;
+    width: 140px;
+    float: left;
+    color: #484848;    
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.update .list span {
+    display: block;
+    float: right;
+    color:#808080;
+    float: right;
+}
+.update .list span.hight-light {
+    color:#ff0000;
+}
+.update .list a:visited {
+    color:#484848;
+}
+.update .list a:hover {
+    color:#ff8000;
+}
+/* image list */
+.img-list {
+    height: 520px;
+    float: left;
+    border-left: 1px solid #D1D1D1;
+}
+.img-list header {
+    height: 40px;
+    padding-left: 10px;
+    background-color:#F8F8F8;
+}
+.img-list header .title {
+    float: left;
+    color: #009BD5;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 40px;
+}
+.img-list header .menu {
+    float: right;
+    height: 30px;
+    padding-top: 10px;
+}
+.img-list header ul {
+    overflow: hidden;
+}
+.img-list header li {
+    width: 50px;
+    height:30px;
+    line-height:30px;
+    float:left;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+.img-list header li.on {
+    color:white;
+    background: #009BD5;
+}
+.img-list .list {
+    overflow: hidden;
+}
+.img-list .list ul {
+    overflow: hidden;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+.img-list .list li {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.img-list .list a.thumbnail-box {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 150px;
+    border: 1px solid gray;
+}
+.img-list .list a.thumbnail-box:hover {
+    border: 1px solid #009BD5;
+}
+.img-list .list a.thumbnail-box img {
+    width: 94px;
+    height: 144px;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+.img-list .list a em {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    width: 94px;
+    font-style: normal;
+    color: white;
+    text-align: right;
+    background-image: url("images/bg.png");
+    background-repeat: no-repeat;
+}
+.img-list .list b {
+    width: 102px;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight:lighter;
+    display: block;        
+    margin-top: 10px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+.img-list .list b:hover {
+    color:#ff8000;
+}
+.img-list .list a:visited, .img-list .list a:link, .img-list .list a:active{
+    color:#009BD5;
+}
+.img-list .list p {
+    width: 102px;
+    color: #A0A0A0;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}

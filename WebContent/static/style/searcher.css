@@ -1,0 +1,55 @@
+.wrapper-block {
+    height: 45px;
+}
+.searcher-wrapper {
+	background-image: url("images/topNav_repeat.png");
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+.searcher {
+	margin: auto;
+	overflow: hidden;
+}
+.searcher header {
+	float: left;
+	height: 45px;
+	line-height: 45px;
+	color: #D1D1D1;
+	font-size: 20px;
+}
+.search-box {
+    position: relative;
+    float: right;
+    width: 380px;
+    height: 45px;
+}
+.searchbox {
+	position: absolute;
+	top: 6px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    text-indent: 5px;
+    font-size: 12px;
+}
+.searchbutton {
+	position: absolute;
+	top: 6px;
+	left: 302px;
+    width: 70px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-weight: bold;
+    background: #0483B0;
+}
+.searchbutton:hover {
+    background: #04B7F2;
+}

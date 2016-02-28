@@ -1,0 +1,208 @@
+.detail-wrapper {
+    margin: 20px auto;
+    overflow: hidden;
+}
+/* detail */
+.detail {
+    float: left;
+    background-color: white;
+    border: 1px solid #D1D1D1;
+}
+.detail header {
+    height: 40px;
+    line-height: 40px;
+    color: #808080;
+    background-color: #EBEBEB;
+}
+.detail header a:link,
+.detail header a:active,
+.detail header a:visited {
+    color: #808080;
+}
+.detail header a:hover {
+    color: #FF0000;
+    text-decoration: underline;
+}
+.detail .content {
+    width: 630px;
+    padding-top: 30px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+.detail .content .pic-box {
+    width: 160px;
+    float: left;
+    text-align: center;
+    color: #FFF;
+}
+.detail .content .pic-box img {
+    width: 160px;
+    height: 220px;
+}
+.detail .content .pic-box h1 {
+    display: block;
+    width: 160px;
+    height: 45px;
+    line-height: 45px;
+    background-color: #FF4200;
+}
+.detail .content .pic-box h1:hover {
+    background-color: #DB3700;
+}
+.detail .content .pic-box h1 a {
+    display: block;
+    width: 160px;
+    height: 44px;
+}
+.detail .content .pic-box a:link,
+.detail .content .pic-box a:active,
+.detail .content .pic-box a:visited {
+    color: #FFF;
+}
+.detail .content .info {
+    float: left;
+    padding-left: 20px;
+}
+.detail .content .info h1 {
+    width: 430px;
+    color: #484848;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.detail .content .info ul {
+    overflow: hidden;
+}
+.detail .content .info li {
+    height: 25px;
+    line-height: 25px;
+    color: #04B7F2;
+}
+.detail .content .info span {
+    color: #484848;
+}
+.detail .content .info li a:link,
+.detail .content .info li a:active,
+.detail .content .info li a:visited {
+    color: #04B7F2;
+}
+.detail .content .info li a:hover{
+    text-decoration: underline;
+}
+.detail .social {
+    height: 30px;
+    padding: 20px;
+    border: 1px dashed #D1D1D1;
+}
+/* hot list */
+.hot-list {
+    height: 408px;
+    float: right;
+    border: 1px solid #D1D1D1;
+    overflow: hidden;
+}
+.hot-list header {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.hot-list header .title {
+    float: left;
+    color: #009BD5;
+    font-size: 14px;
+    font-weight: bold;
+}
+.hot-list header .menu {
+    float: right;
+    color:#484848;
+}
+.hot-list header .menu a, a:visited{
+    color:#04B7F2;
+}
+.hot-list .list ul {
+    overflow: hidden;
+    padding-top: 5px;
+}
+.hot-list .list li {
+    float: left;
+    padding: 5px;
+}
+.hot-list .list a.thumbnail-box {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 150px;
+    border: 1px solid transparent;
+}
+.hot-list .list a.thumbnail-box:hover {
+    border: 1px solid #009BD5;
+}
+.hot-list .list a.thumbnail-box img {
+    width: 94px;
+    height: 144px;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+.hot-list .list b {
+    display: block;  
+    width: 102px;
+    text-align: center;
+    color: #484848;
+    font-weight: lighter;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+.hot-list .list b:hover {
+    color:#ff8000;
+}
+/* story */
+.mod-story {
+    margin: auto;
+    background-color: white;
+    border: 1px solid #D1D1D1;
+}
+.mod-story-list {
+    margin: 15px auto;
+    padding: 0 10px 10px 10px;
+    border: 1px solid #D1D1D1;
+}
+.mod-story-list h3, .mod-story-content h3 {
+    height: 25px;
+    line-height: 25px;
+    color: #000;
+}
+.mod-story-list ul {
+    overflow: hidden;
+}
+.mod-story-list ul li {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #D1D1D1;
+    border: 1px solid #D1D1D1;
+    border-radius: 3px;
+
+}
+.mod-story-list ul li:hover {
+    background-color: #009BD5;
+    border: 1px solid #009BD5;
+}
+.mod-story-list ul li a:link, .mod-story-list ul li a:visited {
+    color: #000;
+}
+.mod-story-list  ul li a:active {
+    color: #ff8000;
+}
+.mod-story-content {
+    margin: 15px auto;
+    padding: 0 10px 10px 10px;
+    color: #484848;
+    border: 1px solid #D1D1D1;
+}

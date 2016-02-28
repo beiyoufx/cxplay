@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:context="http://www.springframework.org/schema/context" 
+        xmlns:jee="http://www.springframework.org/schema/jee"
+        xsi:schemaLocation="  
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.1.xsd">
+
+    <!-- 导入src目录下的jdbc.properties文件 -->
+    <context:property-placeholder location="classpath:jdbcmysql.properties"/>
+    <!-- 配置c3p0连接池-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${driverClassName}"></property>
+        <property name="jdbcUrl" value="${url}"></property>
+        <property name="user" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+        <property name="initialPoolSize" value="${initialSize}"></property>
+        <property name="maxPoolSize" value="${maxIdle}"></property>
+        <property name="minPoolSize" value="${minIdle}"></property>
+        <property name="maxIdleTime" value="${maxIdleTime}"></property>
+        <property name="checkoutTimeout" value="${checkoutTimeout}"></property>
+    </bean>
+
+    <!-- 创建spring的sessionfactory工厂 -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <!-- 注入数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- 设置spring去哪个包中查找相应的实体类 -->
+        <property name="mappingResources">
+            <list>
+                <value>com/tgg/cxplay/model/Area.hbm.xml</value>
+                <value>com/tgg/cxplay/model/Category.hbm.xml</value>
+                <value>com/tgg/cxplay/model/Role.hbm.xml</value>
+                <value>com/tgg/cxplay/model/Tag.hbm.xml</value>
+                <value>com/tgg/cxplay/model/User.hbm.xml</value>
+                <value>com/tgg/cxplay/model/Video.hbm.xml</value>
+                <value>com/tgg/cxplay/model/VideoAsset.hbm.xml</value>
+            </list>
+        </property>
+        <!-- 配置hibernate属性的设置 -->
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.format_sql">false</prop>
+                <prop key="connection.useUnicode">true</prop> 
+                <prop key="connection.characterEncoding">UTF-8</prop> 
+            </props>
+        </property>
+    </bean>
+
+    <bean id="VideoDao" class="com.tgg.cxplay.dao.impl.VideoDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="UserDao" class="com.tgg.cxplay.dao.impl.UserDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="SearchService" class="com.tgg.cxplay.service.impl.SearchServiceImpl">
+        <property name="videoDao" ref="VideoDao"></property>
+    </bean>
+
+    <!-- 开启配置事务拦截器 -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 基本事务定义，使用transactionManager做事务管理，默认get*，find*方法的事务为read-only -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="find*" read-only="true"/>
+            <tx:method name="get*" read-only="true"/>
+            <tx:method name="update*" propagation="REQUIRED"/>
+            <tx:method name="delete*" propagation="REQUIRED"/>
+            <tx:method name="save*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+    <!-- 配置aop， spring是通过aop来进行事务管理的 -->
+    <aop:config>
+        <!-- 设置pointCut,只对业务逻辑层实施事务-->
+        <aop:pointcut id="businessService" expression="execution(* com.tgg.cxplay.service..*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="businessService" />  
+    </aop:config>
+
+</beans>

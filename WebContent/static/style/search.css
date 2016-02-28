@@ -1,0 +1,215 @@
+.result-wrapper {
+	margin: auto;
+	padding-top: 10px;
+	overflow: hidden;
+}
+/* category nav */
+.category-nav {
+	float: left;
+	width: 240px;
+	background-color: #F8F8F8;
+	border: 1px solid #D1D1D1;
+}
+.category-nav header {
+	height: 40px;
+	line-height: 40px;
+	font-size: 25px;
+	text-align: center;
+	border-bottom: 1px dashed #D1D1D1;
+}
+.category-nav ul {
+	overflow: hidden;
+}
+.category-nav li {
+	height: 35px;
+	line-height: 35px;
+	padding-left: 70px;
+	color: #484848;
+	font-size: 14px;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}
+.category-nav li a{
+	display:block;
+	height:35px;
+}
+.category-nav li:hover {
+	border-top: 1px solid #D1D1D1;
+	border-bottom: 1px solid #D1D1D1;
+	cursor: pointer;
+	background-color: white;
+}
+.category-nav li a:visited,
+.category-nav li a:link,
+.category-nav li a:active{
+	color: #484848;
+}
+/* result */
+.result {
+	float: right;
+	background-color: white;
+	border: 1px solid #D1D1D1;
+	overflow: hidden;
+}
+.result header {
+	height: 40px;
+	line-height: 40px;
+}
+.result header span {
+	font-size: 16px;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #808080;
+}
+.result .requirement {
+	border-bottom: 1px dashed #D1D1D1;
+	overflow: hidden;
+}
+.result .requirement div {
+	overflow: hidden;
+	padding-left: 10px;
+}
+
+.result .requirement li {
+	float: left;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 10px 0 10px;
+	margin: 5px;
+	color: #FFF;
+	background-color: #808080;
+	cursor: pointer;
+}
+.result .requirement li:hover {
+	background-color: #009BD5;
+}
+.result .requirement a:link,
+.result .requirement a:visited {
+	color: white;
+}
+.result .requirement a:active{
+	color:#ff8000;
+}
+.result .requirement .index {
+	color: white;
+	background-color: #009BD5;
+}
+.result .result-list {
+	overflow: hidden;
+}
+.result .result-list .list ul {
+	overflow: hidden;
+}
+.result .result-list .list li {
+	float: left;
+	padding: 8px;
+}
+.result .result-list .list li a.thumbnail-box {
+	position: relative;
+	display: block;
+	float: left;
+	width: 100px;
+	height: 150px;
+	border: 1px solid gray;
+}
+.result .result-list .list li a.thumbnail-box:hover {
+	border: 1px solid #009BD5;
+}
+.result .result-list .list li a.thumbnail-box img {
+	width: 94px;
+	height: 144px;
+	margin-left: 3px;
+	margin-top: 3px;
+}
+.result .result-list .list li a.thumbnail-box em {
+	position: absolute;
+    bottom: 3px;
+    right: 3px;
+    display: block;
+    width: 94px;
+    height: 20px;
+    line-height: 20px;
+    color: #FFF;
+    text-align: right;
+    background-image: url("images/bg.png");
+    background-repeat: no-repeat;
+}
+.result .result-list .list .info {
+	overflow: hidden;
+	width: 150px;
+	padding-left: 10px;
+	color: #808080;
+}
+.result .result-list .list .info div {
+	clear: left;
+}
+.result .result-list .list .info h3 {
+	float: left;
+	color: #484848;
+	max-width: 150px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.result .result-list .list .info h3 a:link,
+.result .result-list .list .info h3 a:active,
+.result .result-list .list .info h3 a:visited
+{
+	color: #009BD5;
+}
+.result .result-list .list .info h3 a:hover {
+	color: #ff0000;
+	text-decoration: underline;
+}
+.result .result-list .list .info span {
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+}
+.result .result-list .list .info .play {
+	display: block;
+	width: 52px;
+	height: 23px;
+	background-image: url("images/gk_bg.png");
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+/* pagination */
+.pagination-wrapper {
+	overflow: hidden;
+	width: 100%;
+	height: 65px;
+	border-top: 1px dashed #D1D1D1;
+}
+.pagination {
+	overflow: hidden;
+	margin: 20px auto;
+	height: 25px;
+}
+.pagination ul {
+	overflow: hidden;
+	text-align: center;
+}
+.pagination li {
+	float:left;
+	margin: 0 5px 0 5px;
+	padding: 0 10px 0 10px;
+	height: 25px;
+	line-height: 25px;
+	color: white;
+	background-color: #009BD5;
+}
+.pagination li.active {
+    background-color: #699F00;
+}
+.pagination .disabled {
+	background-color:#808080;
+}
+.pagination li a:link,
+.pagination li a:active,
+.pagination li a:visited {
+	color: #FFF;
+}
+.pagination li span {
+	font-style: italic;
+}

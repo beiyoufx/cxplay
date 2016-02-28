@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+    <sql id="com.tgg.cxplay.dao.VideoDao.findBase">
+    <![CDATA[
+        SELECT v.*[$ADD_RESAULT_CATEGORY$][$ADD_RESAULT_AREA$][$ADD_RESAULT_TAG$]
+        FROM video AS v
+        [$INNER_TABLE_CATEGORY$][$INNER_TABLE_AREA$][$INNER_TABLE_TAG$]
+        WHERE is_deleted=0 
+    ]]>
+    </sql>
+    <sql id="com.tgg.cxplay.dao.VideoDao.countBase">
+    <![CDATA[
+        SELECT COUNT(*)
+        FROM video AS v
+        [$INNER_TABLE_CATEGORY$][$INNER_TABLE_AREA$][$INNER_TABLE_TAG$]
+        WHERE is_deleted=0
+    ]]>
+    </sql>
+    <sql id="ADD_RESAULT_CATEGORY">
+    <![CDATA[
+        , c.name AS category_name 
+    ]]>
+    </sql>
+    <sql id="INNER_TABLE_CATEGORY">
+    <![CDATA[
+        INNER JOIN video_category AS vc ON vc.video_id = v.id
+        INNER JOIN category AS c ON vc.category_id = c.id 
+    ]]>
+    </sql>
+    <sql id="ADD_RESAULT_AREA">
+    <![CDATA[
+        , a.name AS area_name 
+    ]]>
+    </sql>
+    <sql id="INNER_TABLE_AREA">
+    <![CDATA[
+        INNER JOIN video_area AS va ON va.video_id = v.id
+        INNER JOIN area AS a ON va.area_id = a.id 
+    ]]>
+    </sql>
+    <sql id="ADD_RESAULT_TAG">
+    <![CDATA[
+        , t.name AS tag_name
+    ]]>
+    </sql>
+    <sql id="INNER_TABLE_TAG">
+    <![CDATA[
+        INNER JOIN video_tag AS vt ON vt.video_id = v.id
+        INNER JOIN tag AS t ON vt.tag_id = t.id 
+    ]]>
+    </sql>
+    <sql id="AND_ID_CRITERIA">
+        <![CDATA[ AND v.id = ? ]]>
+    </sql>
+    <sql id="AND_NAME_CRITERIA">
+        <![CDATA[ AND v.name = ? ]]>
+    </sql>
+    <sql id="AND_TAG_CRITERIA">
+        <![CDATA[ AND t.name = ? ]]>
+    </sql>
+    <sql id="AND_CATEGORY_CRITERIA">
+        <![CDATA[ AND c.name = ? ]]>
+    </sql>
+    <sql id="AND_AREA_CRITERIA">
+        <![CDATA[ AND a.name = ? ]]>
+    </sql>
+    <sql id="AND_KEYWORDS_CRITERIA">
+        <![CDATA[ AND keywords = ? ]]>
+    </sql>
+    <sql id="OR_ID_CRITERIA">
+        <![CDATA[ OR v.id = ? ]]>
+    </sql>
+    <sql id="OR_NAME_CRITERIA">
+        <![CDATA[ OR v.name = ? ]]>
+    </sql>
+    <sql id="OR_TAG_CRITERIA">
+        <![CDATA[ OR t.name = ? ]]>
+    </sql>
+    <sql id="OR_CATEGORY_CRITERIA">
+        <![CDATA[ OR c.name = ? ]]>
+    </sql>
+    <sql id="OR_AREA_CRITERIA">
+        <![CDATA[ OR a.name = ? ]]>
+    </sql>
+    <sql id="OR_KEYWORDS_CRITERIA">
+        <![CDATA[ OR keywords = ? ]]>
+    </sql>
+    <sql id="LIKE_KEYWORDS_CRITERIA">
+        <![CDATA[ AND keywords LIKE '%?%' ]]>
+    </sql>
+    <sql id="LIMIT">
+        <![CDATA[ LIMIT ?, ? ]]>
+    </sql>
+    <sql id="ORDER">
+        <![CDATA[ ORDER BY ? ? ]]>
+    </sql>
+</custom-sql>

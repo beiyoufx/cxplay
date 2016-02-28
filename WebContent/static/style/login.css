@@ -1,0 +1,116 @@
+.login-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url("images/login_bg.jpg");
+	background-size: cover;
+	z-index: -1;
+}
+.login-wrapper {
+	margin: 200px auto 0 auto;
+	min-width: 400px;
+	max-width: 900px;
+	padding: 10px;
+	overflow: hidden;
+}
+/* login box */
+.login-box {
+    float: right;
+    width: 400px;
+    border: 1px solid #AAA;
+    box-shadow: 3px 3px 4px #000;
+    -moz-box-shadow: 3px 3px 4px #000;
+    -webkit-box-shadow: 3px 3px 4px #000;
+}
+.login-box header {
+	height: 80px;
+	line-height: 80px;
+	color: #FFF;
+	font-size: 15px;
+	text-align: center;
+}
+.login-box ul {
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-bottom: 50px;
+}
+.login-box li {
+	position: relative;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.login-box span {
+	position: absolute;
+	top: 15px;
+	width: 22px;
+	height: 22px;
+}
+.login-box li .username-ico {
+	left: 10px;
+	background: url("images/user_32.png");
+	background-size: cover;
+}
+.login-box li .password-ico {
+	left: 10px;
+	background: url("images/password_32.png");
+	background-size: cover;
+}
+.login-box li .username-msg {
+	right: 10px;
+	background: url("images/err_32.png");
+	background-size: cover;
+}
+.login-box li .password-msg {
+	right: 10px;
+	background: url("images/err_32.png");
+	background-size: cover;
+}
+.login-box li input,
+.login-box li a.login {
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	font-size: 20px;
+	box-shadow: 1px 1px 2px #000;
+    -moz-box-shadow: 1px 1px 2px #000;
+    -webkit-box-shadow: 1px 1px 2px #000;
+}
+.login-box li input::-webkit-input-placeholder {
+	font-size: 16px;
+}
+
+.login-box li input.username,
+.login-box li input.password {
+	width: 220px;
+	padding-left: 40px;
+	padding-right: 40px;
+	outline: none;
+}
+.login-box li a.login {
+	display: block;
+	width: 300px;
+	text-align: center;
+	color: #FFF;
+	background: #04B7F2;
+}
+.login-box li a.login:active {
+	background: #009BD5;
+	font-size: 19px;
+	box-shadow: 0 0;
+    -moz-box-shadow: 0 0;
+    -webkit-box-shadow: 0 0;
+}
+.login-box li a:visited,
+.login-box li a:link {
+	color: #FFF;
+}
+/* login footer */
+footer {
+	margin: 50px auto 0 auto;
+	text-align: center;
+	color: #FFF;
+	font-size: 14px;
+}

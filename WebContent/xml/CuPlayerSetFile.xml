@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<content>
+  <CuPlayerWidth>600</CuPlayerWidth>
+  <CuPlayerHeight>410</CuPlayerHeight>
+  <CuPlayerAutoPlay>no</CuPlayerAutoPlay>    
+  <CuPlayerImage>images/pStart.jpg</CuPlayerImage>
+<CuPlayerLogo></CuPlayerLogo>
+<CuPlayerPosition>top-right</CuPlayerPosition>
+  <CuPlayerFile>test.mp4</CuPlayerFile>
+</content>

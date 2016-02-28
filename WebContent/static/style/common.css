@@ -1,0 +1,175 @@
+/*css reset*/
+body {
+    font-size: 12px;
+    font-family: "Microsoft yahei";
+    color: #333;
+    background-color: #F5F4F2;
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre,
+form, fieldset, legend, button, input, textarea, th, td, section, p, span, div {
+    margin: 0;
+    padding: 0;
+}
+
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+
+code, kbd, pre, samp {
+    font-family: "Microsoft yahei";
+}
+
+small {
+    font-size: 12px;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+legend {
+    color: #000;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* common class */
+.dis {
+    display: block;
+}
+.undis {
+    display: none;
+}
+.clearfix {
+    clear: both;
+}
+.col-19-9 {
+    width: 199px;
+}
+.col-23 {
+    width: 230px;
+}
+.col-24-9 {
+    width: 249px;
+}
+.col-25 {
+    width: 250px;
+}
+.col-65 {
+    width: 650px;
+}
+.col-80 {
+    width: 800px;
+}
+.col-85 {
+    width: 850px;
+}
+.col-90 {
+    width: 900px;
+}
+.col-100 {
+    width: 1000px;
+}
+.row-42 {
+    height: 420px;
+}
+/* tip */
+span.tip {
+    display: block;
+    position: relative;
+    border: 1px solid #009BD5;
+}
+span.tip i {
+    position: absolute;
+    left: 30px;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-top-color: #009BD5;
+}
+/* searcher */
+.wrapper-block {
+    height: 45px;
+}
+.searcher-wrapper {
+    background-image: url("images/topNav_repeat.png");
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+.searcher {
+    margin: auto;
+    overflow: hidden;
+}
+.searcher header {
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    color: #D1D1D1;
+    font-size: 20px;
+}
+.search-box {
+    position: relative;
+    float: right;
+    width: 380px;
+    height: 45px;
+}
+.searchbox {
+    position: absolute;
+    top: 6px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    text-indent: 5px;
+    font-size: 12px;
+}
+.searchbutton {
+    position: absolute;
+    top: 6px;
+    left: 302px;
+    width: 70px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-weight: bold;
+    background: #0483B0;
+}
+.searchbutton:hover {
+    background: #04B7F2;
+}
