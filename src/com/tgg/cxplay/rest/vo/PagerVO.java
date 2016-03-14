@@ -1,7 +1,6 @@
 package com.tgg.cxplay.rest.vo;
 
 import java.util.List;
-import com.tgg.cxplay.model.Video;
 
 public class PagerVO {
 
@@ -10,7 +9,7 @@ public class PagerVO {
     private int perPageItems;
     private int totalPages;
     private int totalItems;
-    private List<Video> videoList;
+    private List<Media> mediaList;
 
     public int getIndex() {
         return index;
@@ -42,10 +41,10 @@ public class PagerVO {
     public void setTotalItems(int totalItems) {
         this.totalItems = totalItems;
     }
-    public List<Video> getVideoList() {
-        return videoList;
+    public List<Media> getMediaList() {
+        return mediaList;
     }
-    public void setVideoList(List<Video> videoList) {
-        this.videoList = videoList;
+    public void setMediaList(List<Media> mediaList) {
+        this.mediaList = mediaList;
     }
 }

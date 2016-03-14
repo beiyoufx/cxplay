@@ -1,10 +1,10 @@
-USE cx_db;
+﻿USE cx_db;
 
 --
 -- Storing data for table `user`
 --
 
-INSERT INTO `user` (`name`, `password`, `display_name`, `create_time`, `update_time`) VALUES ('admin', 'root管理员', '123', NOW(), NOW());
+INSERT INTO `user` (`name`, `password`, `display_name`, `create_time`, `update_time`) VALUES ('root', '123', 'ROOT管理员', NOW(), NOW());
 
 --
 -- Storing data for table `role`
@@ -37,16 +37,19 @@ INSERT INTO `role_permission` (`role_id`, `permission_id`) VALUES (4, 5), (4, 6)
 -- Storing data for table `category`
 --
 
-INSERT INTO `category` (`name`) VALUES ('film'), ('tv'), ('cartoon'), ('variety');
+INSERT INTO `category` (`name`, `display_name`) 
+VALUES ('film', '电影'), ('tv', '电视剧'), ('cartoon', '动漫'), ('variety', '综艺');
 
 --
 -- Storing data for table `area`
 --
 
-INSERT INTO `area` (`name`) VALUES ('大陆'), ('港台'), ('欧美'), ('日韩'), ('东南亚'), ('印度');
+INSERT INTO `area` (`name`, `display_name`) 
+VALUES ('china', '大陆'), ('hongkong_taiwan', '港台'), ('europe_us', '欧美'), ('japan_korea', '日韩'), ('east_south_asia', '东南亚'), ('india', '印度'), ('other', '其他');
 
 --
 -- Storing data for table `tag`
 --
 
-INSERT INTO `tag` (`name`) VALUES ('喜剧'), ('爱情'), ('科幻'), ('悬疑'), ('动作'), ('魔幻'), ('古装'), ('灾难'), ('冒险'), ('武侠');
+INSERT INTO `tag` (`name`, `display_name`) 
+VALUES ('comedy', '喜剧'), ('love', '爱情'), ('science', '科幻'), ('suspense', '悬疑'), ('actioner', '动作'), ('magic', '魔幻'), ('costume', '古装'), ('disaster', '灾难'), ('adventure', '冒险'), ('swordsmen', '武侠');

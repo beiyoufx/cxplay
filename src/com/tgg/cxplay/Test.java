@@ -7,8 +7,8 @@ import java.io.IOException;
 
 import com.tgg.cxplay.log.Log;
 import com.tgg.cxplay.log.LogFactoryUtil;
-import com.tgg.cxplay.utils.FileUtil;
-import com.tgg.cxplay.utils.MD5Util;
+import com.tgg.cxplay.util.FileUtil;
+import com.tgg.cxplay.util.MD5Util;
 
 public class Test {
 

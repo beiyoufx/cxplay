@@ -10,6 +10,7 @@ public class User {
     private String password;
     private Date createTime;
     private Date updateTime;
+    private String role;
     private boolean isDeleted;
 
     public int getId() {
@@ -48,7 +49,13 @@ public class User {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
-    public boolean getIsDeleted() {
+    public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public boolean getIsDeleted() {
         return isDeleted;
     }
     public void setIsDeleted(boolean isDeleted) {
@@ -60,7 +67,7 @@ public class User {
         return "User [id=" + id + ",name=" + name 
                 + ",displayName=" + displayName + ",password=" + password 
                 + ",createTime=" + createTime.getTime() + ",updateTime=" + updateTime.getTime() 
-                + ",isDeleted=" + isDeleted + "]";
+                + ",role=" + role + ",isDeleted=" + isDeleted + "]";
     }
 
 }

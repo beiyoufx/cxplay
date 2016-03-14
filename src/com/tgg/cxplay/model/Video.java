@@ -2,6 +2,15 @@ package com.tgg.cxplay.model;
 
 import java.util.Date;
 
+import com.tgg.cxplay.model.vo.VideoVO;
+
+
+/** 
+ * @ClassName VideoAsset
+ * @Description all video information in this Asset, for video management.
+ * @author Jerry Teng
+ * @date Jul 25, 2015 6:49:13 PM
+ */
 public class Video {
 
     private int id;
@@ -17,6 +26,9 @@ public class Video {
     private String actors;
     private String directors;
     private boolean isDeleted;
+    private String category;
+    private String tag;
+    private String area;
 
     public int getId() {
         return id;
@@ -90,11 +102,45 @@ public class Video {
     public void setDirectors(String directors) {
         this.directors = directors;
     }
-    public boolean getIsDeleted() {
-        return isDeleted;
+    public boolean isDeleted() {
+		return isDeleted;
+	}
+	public void setDeleted(boolean isDeleted) {
+		this.isDeleted = isDeleted;
+	}
+	public String getCategory() {
+        return category;
     }
-    public void setIsDeleted(boolean isDeleted) {
-        this.isDeleted = isDeleted;
+    public void setCategory(String category) {
+        this.category = category;
+    }
+    public String getTag() {
+        return tag;
+    }
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+    public String getArea() {
+        return area;
+    }
+    public void setArea(String areaName) {
+        this.area = areaName;
+    }
+    public VideoVO getVideoVO() {
+    	VideoVO videoVO = new VideoVO();
+    	videoVO.setId(this.getId());
+    	videoVO.setActors(this.getActors());
+    	videoVO.setClarity(this.getClarity());
+    	videoVO.setCreateTime(this.getCreateTime());
+    	videoVO.setUpdateTime(this.getUpdateTime());
+    	videoVO.setDirectors(this.getDirectors());
+    	videoVO.setEnName(this.getEnName());
+    	videoVO.setEpisode(this.getEpisode());
+    	videoVO.setName(this.getName());
+    	videoVO.setPic(this.getPic());
+    	videoVO.setSynopsis(this.getSynopsis());
+    	videoVO.setUrl(this.getUrl());
+    	return videoVO;
     }
 
     @Override
@@ -105,7 +151,8 @@ public class Video {
                 + ",pic=" + pic + ",clarity=" + clarity 
                 + ",synopsis=" + synopsis + ",episode=" + episode 
                 + ",actors=" + actors + ",directors=" + directors 
-                + ",isDeleted=" + isDeleted + "]";
+                + ",isDeleted=" + isDeleted
+                + ",category=" + category + ",tag=" + tag 
+                + ",area=" + area + "]";
     }
-
 }

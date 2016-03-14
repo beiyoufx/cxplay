@@ -2,8 +2,9 @@ package com.tgg.cxplay.exception;
 
 public class ORMException extends RuntimeException {
 
-    private static final long serialVersionUID = 1L;
-    public ORMException() {
+	private static final long serialVersionUID = 4961638116788916641L;
+
+	public ORMException() {
         super();
     }
 

@@ -11,5 +11,8 @@
         <property name="name" type="java.lang.String">
             <column name="name" length="64" />
         </property>
+        <property name="displayName" type="java.lang.String">
+            <column name="display_name" length="64" />
+        </property>
     </class>
 </hibernate-mapping>

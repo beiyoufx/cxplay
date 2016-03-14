@@ -2,8 +2,9 @@ package com.tgg.cxplay.exception;
 
 public class XMLException extends RuntimeException {
 
-    private static final long serialVersionUID = 1L;
-    public XMLException() {
+	private static final long serialVersionUID = -7475595369508249923L;
+
+	public XMLException() {
         super();
     }
 

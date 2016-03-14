@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.tgg.cxplay.model.Role;
 import com.tgg.cxplay.model.User;
-import com.tgg.cxplay.model.Video;
 import com.tgg.cxplay.model.vo.LimitCriteriaVO;
 
 /** 
@@ -15,14 +14,14 @@ import com.tgg.cxplay.model.vo.LimitCriteriaVO;
  */
 public interface UserDao {
     public List<User> find();
-    public List<Video> find(int[] ids);
-    public List<Video> find(Role role, String keywords, LimitCriteriaVO limitCriteriaVO);
-    public List<Video> find(Role role);
-    public List<Video> find(String keywords);
+    public List<User> find(Role role, String keywords, LimitCriteriaVO limitCriteriaVO);
+    public List<User> find(Role role, LimitCriteriaVO limitCriteriaVO);
+    public List<User> find(String keywords, LimitCriteriaVO limitCriteriaVO);
     public User getUser(int id);
-    public void save(User user);
-    public void save(List<User> users);
-    public void update(User user);
-    public void delete(int id);
-    public void delete(int[] ids);
+    public User getUser(String username);
+    public int count(Role role, String keywords);
+    public int save(User user);
+    public int update(User user);
+    public void update_U_R(int userId, String roleName);
+    public int delete(int id);
 }

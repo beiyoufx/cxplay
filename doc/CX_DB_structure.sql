@@ -17,8 +17,8 @@ CREATE TABLE IF NOT EXISTS `cx_db`.`video` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(64) NOT NULL,
   `en_name` VARCHAR(64) NULL,
-  `create_time` DATE NOT NULL,
-  `update_time` DATE NOT NULL,
+  `create_time` DATETIME NOT NULL,
+  `update_time` DATETIME NOT NULL,
   `url` VARCHAR(64) NOT NULL,
   `pic` VARCHAR(64) NOT NULL,
   `clarity` VARCHAR(64) NULL,
@@ -37,6 +37,7 @@ ENGINE = InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE IF NOT EXISTS `cx_db`.`category` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(64) NOT NULL,
+  `display_name` VARCHAR(64) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
@@ -47,6 +48,7 @@ ENGINE = InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE IF NOT EXISTS `cx_db`.`area` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(64) NOT NULL,
+  `display_name` VARCHAR(64) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
@@ -57,6 +59,7 @@ ENGINE = InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE IF NOT EXISTS `cx_db`.`tag` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(64) NOT NULL,
+  `display_name` VARCHAR(64) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
@@ -69,8 +72,8 @@ CREATE TABLE IF NOT EXISTS `cx_db`.`user` (
   `name` VARCHAR(64) NOT NULL,
   `password` VARCHAR(32) NOT NULL,
   `display_name` VARCHAR(64) NULL,
-  `create_time` DATE NULL,
-  `update_time` DATE NULL,
+  `create_time` DATETIME NULL,
+  `update_time` DATETIME NULL,
   `is_deleted` TINYINT(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB DEFAULT CHARSET=utf8;

@@ -4,6 +4,7 @@ public class Category {
 
     private int id;
     private String name;
+    private String displayName;
 
     public int getId() {
         return id;
@@ -17,6 +18,12 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
+    public String getDisplayName() {
+		return displayName;
+	}
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+	}
 
     @Override
     public String toString() {

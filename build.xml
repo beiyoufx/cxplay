@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<project name="cxplay" default="war" basedir=".">    
+    <property name="classes.dir" value="build/classes"/>    
+    <property name="build.dir" value="build"/>    
+    <property name="lib.dir" value="WebContent/WEB-INF/lib/"/>    
+        
+    <!--项目依赖的第三方jar包路径-->    
+    <path id="lib_classpath">    
+        <fileset dir="${lib.dir}">    
+            <include name="*.jar"/>    
+        </fileset>
+    </path>    
+    
+    <target name="clean" description="删除build目录">    
+        <delete dir="${build.dir}"/>   
+        <mkdir dir="${build.dir}" />  
+        <mkdir dir="${classes.dir}" />  
+    </target>    
+    
+    <target name="compile" depends="clean" description="建立${classes}路径，并编译class文件到${classes}路径下">    
+        <!--执行编译-->    
+        <javac srcdir="src" destdir="${classes.dir}" encoding="UTF-8"> <!--工程使用的是urf-8格式-->    
+            <classpath refid="lib_classpath"/> <!--引入项目依赖的第三方jar包-->    
+        </javac>    
+    </target>    
+        
+    <target name="prepare" description="将Struts、Spring、Hibernate、properties等配置文件拷贝到${classes}路径下">    
+        <!--拷贝所有的xml配置文件-->    
+        <copy todir="${classes.dir}">       
+            <fileset dir="resource">       
+                <include name="**/*.xml"/>       
+            </fileset>       
+        </copy>
+        <copy todir="${classes.dir}">       
+            <fileset dir="src">       
+                <include name="**/*.xml"/>       
+            </fileset>       
+        </copy>
+        <!--拷贝所有的属性文件-->    
+        <copy todir="${classes.dir}">       
+            <fileset dir="resource">       
+                <include name="**/*.properties"/>       
+            </fileset>       
+        </copy>    
+    </target>    
+    
+    <target name="war" depends="compile,prepare" description="打包war">    
+        <war destfile="${build.dir}/cxplay.war" webxml="WebContent/WEB-INF/web.xml">    
+            <!--拷贝WebContent下除了Web-INF和META-INF的两个文件夹-->    
+            <fileset dir="WebContent" />    
+            <!--拷贝lib目录下的jar包-->    
+            <lib dir="${lib.dir}"/>    
+            <!--拷贝${classes}下的class文件-->    
+            <classes dir="${classes.dir}"/>    
+        </war>    
+    </target>    
+</project>

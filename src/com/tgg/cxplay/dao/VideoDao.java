@@ -7,6 +7,7 @@ import com.tgg.cxplay.model.Category;
 import com.tgg.cxplay.model.Tag;
 import com.tgg.cxplay.model.Video;
 import com.tgg.cxplay.model.vo.LimitCriteriaVO;
+import com.tgg.cxplay.model.vo.VideoVO;
 
 /** 
  * @ClassName VideoDao
@@ -15,18 +16,18 @@ import com.tgg.cxplay.model.vo.LimitCriteriaVO;
  * @date 2015/7/7 22:15:15
  */
 public interface VideoDao {
-    public List<?> find();
-    public List<?> find(int[] ids);
-    public List<?> find(Area area, Tag tag, Category category, String keywords, LimitCriteriaVO limitCriteriaVO);
-    public List<?> find(Area area);
-    public List<?> find(Tag tag);
-    public List<?> find(String keywords);
-    public List<?> find(Category category);
+    public List<Video> find();
+    public List<Video> find(Area area, Tag tag, Category category, String keywords, LimitCriteriaVO limitCriteriaVO);
+    public List<Video> find(Area area, LimitCriteriaVO limitCriteriaVO);
+    public List<Video> find(Tag tag, LimitCriteriaVO limitCriteriaVO);
+    public List<Video> find(String keywords, LimitCriteriaVO limitCriteriaVO);
+    public List<Video> find(Category category, LimitCriteriaVO limitCriteriaVO);
     public int count(Area area, Tag tag, Category category, String keywords);
     public Video getVideo(int id);
-    public void save(Video video);
-    public void save(List<Video> videos);
-    public void update(Video video);
-    public void delete(int id);
-    public void delete(int[] ids);
+    public int save(VideoVO videoVO);
+    public int update(VideoVO videoVO);
+    public int delete(int id);
+    public void update_V_A(int videoId, int areaId);
+    public void update_V_T(int videoId, int TagId);
+    public void update_V_C(int videoId, int CategoryId);
 }
